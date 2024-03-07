@@ -12,11 +12,11 @@ run_container_local:
 ## DOCKER DEPLOYMENT
 #########
 
-# Step 1
+# Step 1 ( ONLY FIRST TIME)
 allow_docker_push:
 	gcloud auth configure-docker $$GCP_REGION-docker.pkg.dev
 
-# Step 2
+# Step 2 ( ONLY FIRST TIME)
 create_artifacts_repo:
 	gcloud artifacts repositories create $$ARTIFACTSREPO --repository-format=docker \
 	--location=$$GCP_REGION --description="Repository for storing images"
